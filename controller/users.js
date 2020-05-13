@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt")
 const shortid = require('shortid')
 const db = require("../db")
+const {sendWelcomeEmail} = require("../emails/account")
 
 const saltRounds  = 10
 
@@ -20,6 +21,7 @@ module.exports.getCreate = ((req, res) => {
 module.exports.postCreate = ((req, res) => {
     
     bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
+        sendWelcomeEmail(req.body.email, req.body.name)
         db.get("users").push({ 
             name: req.body.name, 
             email: req.body.email,

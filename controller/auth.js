@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt")
 const db = require("../db")
+const { sendWarningLogin } = require("../emails/account")
 
 module.exports.login = function(req, res) {
     let values = []
@@ -26,10 +27,8 @@ module.exports.postLogin = function(req, res) {
                 res.redirect("/users")
                 console.log(req.user);
             } else {
-                console.log("trc", user.wrongLogin);
                
                 let time = Number(user.wrongLogin)
-                console.log("sau", time);
                 if ( time < 3) {
                    
                     res.render("auth/login", {
@@ -37,10 +36,11 @@ module.exports.postLogin = function(req, res) {
                         values: req.body
                     })
                     user.wrongLogin++
-                    console.log("t2", time);
+        
             
                 } else {
-                    res.render("auth/login", {
+                    sendWarningLogin(user.email, user.name)
+                    res.render("auth/block", {
                         errors : [ "Your account has been block"],
                         values: req.body
                     })

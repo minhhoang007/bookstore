@@ -14,9 +14,16 @@
   "users": [
     {
       "name": "test1",
-      "email": "test1@gmail.com",
+      "email": "hoangvanminh007@gmail.com",
       "password": "$2b$10$ocapdVskNJpPs.cpj6Xxb.6/IoC.PXxB9CedfBSlZpO8DzfXsQf3G",
       "id": "h8QSxcMSn",
+      "wrongLogin": 0
+    },
+    {
+      "name": "minh",
+      "email": "minhhoang.devvn@gmail.com",
+      "password": "$2b$10$YqbFL3dv2z9YtZmZCggAsO5XvGJNZUOUrzRqq1DjzgSIfqgG4k6f.",
+      "id": "CAJlOuxCR",
       "wrongLogin": 0
     }
   ],
@@ -38,6 +45,12 @@
       "bookID": "cq2ug_Qaw",
       "isComplete": "true",
       "id": "jOLs9znM3"
+    },
+    {
+      "userID": "h8QSxcMSn",
+      "bookID": "cq2ug_Qaw",
+      "isComplete": "true",
+      "id": "9sSY_brJ3"
     }
   ]
 }

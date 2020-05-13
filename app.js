@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(cookieParser(process.env.SIGN_COOKIES))
 
 app.use( bookRoute)
-app.use( "/users", middleware.requireAuth, userRoute)
+app.use( "/users",  userRoute)
 app.use(transRoute)
 app.use(authRoute)
 
