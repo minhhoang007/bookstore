@@ -1,0 +1,19 @@
+<%- include("partials/header.ejs")-%>
+
+
+<div class="container d-flex mt-5">
+  <% books.forEach((e) => { %>
+    <div class="card mr-3" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title my-card-title"><%= e.title %> </h5>
+        <p class="card-text"><%= e.description %> </p>
+        <a href="/<%= e.id %>/view" class="btn btn-primary">View</a>
+        <a href="/<%= e.id %>/delete" class="btn btn-danger">Delete</a>
+        <a href="/<%= e.id %>/edit" class="btn btn-warning">Edit</a>
+      </div>
+    </div>
+<% }) %>
+</div>
+
+

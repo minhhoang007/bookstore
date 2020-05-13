@@ -1,0 +1,47 @@
+<%- include("../partials/header.ejs")-%>
+  
+  <div class="container mt-5">
+    <h2 style="text-transform:capitalize">
+      this is create page
+    </h2>
+     <% if (errors ){ %>
+      <% for (let e in errors) { %>
+        <p class="alert alert-danger"><%=  errors[e] %></p>
+      <% } %>
+    <% } %>
+    
+    <form method="POST" action="/transaction/create">
+      <label for="userID">Users</label>
+      
+      <select name="userID" class="form-control w-25">
+        <% users.forEach((e) => { %>
+          <option  id="userID" value="<%= e.id %>">  
+            <%= e.name %> 
+        </option>
+        <% })%>
+      </select>
+      <br />
+      
+     <label for="bookID">Books</label>
+      
+      <select name="bookID" class="form-control w-25" >
+        <% books.forEach((e) => { %>
+          <option id="bookID" value="<%= e.id %>">  
+            <%= e.title %> 
+        </option>
+        <% })%>
+      </select>
+      <br />
+      
+      <label for="isComplete">Complete</label>
+      
+      <select name="isComplete" class="form-control w-25" >
+          <option id="isComplete" value="true">  true</option>
+        <option id="isComplete" value="false"> false </option>
+      </select>
+      
+      <button class="btn btn-primary w-25 mt-2">
+        Create
+      </button>
+    </form>
+  </div>

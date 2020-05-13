@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs")-%>
+
+<div class="container mt-5">
+  <form action="/create" method="POST" class="form-center">
+    <div class="form-group w-25">
+      <label for="name">Title</label>
+      <input name="name" type="text" class="form-control" value="<%= users.name %>" required>
+    </div>
+    <div class="form-group w-25">
+      <label for="address">Description</label>
+      <input name="address" type="text" class="form-control" value="<%= users.address %>" required>
+    </div>
+  
+    <button type="submit" class="btn btn-primary w-25">Create</button>
+  </form>
+</div>
+</div>

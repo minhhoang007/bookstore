@@ -1,0 +1,43 @@
+{
+  "books": [
+    {
+      "title": "nhà giả kim",
+      "description": "Nhà giả kim là một cuốn sách được xuất bản lần đầu ở Brasil năm 1988 và là cuốn sách nổi tiếng nhất của nhà văn Paulo Coelho. Nó được dịch ra 67 ngôn ngữ và bán ra tới 65 triệu bản, trở thành một trong những quyển sách bán chạy nhất mọi thời đại. Đây là một câu chuyện thúc giục độc giả theo đuổi giấc mơ của mình",
+      "id": "cq2ug_Qaw"
+    },
+    {
+      "title": "how to win friends and influence people",
+      "description": "How to Win Friends and Influence People is a self-help book written by Dale Carnegie, published in 1936. Over 30 million copies have been sold worldwide, making it one of the best-selling books of all time. In 2011, it was number 19 on Time Magazine's list of the 100 most influential books.",
+      "id": "DJg5x-Lm9"
+    }
+  ],
+  "users": [
+    {
+      "name": "test1",
+      "email": "test1@gmail.com",
+      "password": "$2b$10$ocapdVskNJpPs.cpj6Xxb.6/IoC.PXxB9CedfBSlZpO8DzfXsQf3G",
+      "id": "h8QSxcMSn",
+      "wrongLogin": 0
+    }
+  ],
+  "transactions": [
+    {
+      "userID": "K9m5CKu9n",
+      "bookID": "cq2ug_Qaw",
+      "isComplete": "true",
+      "id": "KiesJu0k-"
+    },
+    {
+      "userID": "K9m5CKu9n",
+      "bookID": "DJg5x-Lm9",
+      "isComplete": "true",
+      "id": "nAlvBYq_r"
+    },
+    {
+      "userID": "mNu8h94bW",
+      "bookID": "cq2ug_Qaw",
+      "isComplete": "true",
+      "id": "jOLs9znM3"
+    }
+  ]
+}
