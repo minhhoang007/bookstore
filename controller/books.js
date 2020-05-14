@@ -4,8 +4,15 @@ const db = require("../db")
 const errors = []
 
 module.exports.index = ((req, res) => {
-    const user = db.get("users").value()
-    res.render("index", { books: db.get("books").value(), user: req.user })
+    const page = parseInt(req.query.page) || 1
+
+    const perPage = 8
+
+    const start = (page - 1) * perPage
+    const end = page * perPage
+
+    res.render("index", { books: db.get("books").slice(start, end).value(),
+     user: req.user, page })
 })
 
 module.exports.getCreate = ((req, res) => {

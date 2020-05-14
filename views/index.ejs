@@ -1,19 +1,43 @@
 <%- include("partials/header.ejs")-%>
 
 
-<div class="container d-flex mt-5">
-  <% books.forEach((e) => { %>
-    <div class="card mr-3" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title my-card-title"><%= e.title %> </h5>
-        <p class="card-text"><%= e.description %> </p>
-        <a href="/<%= e.id %>/view" class="btn btn-primary">View</a>
-        <a href="/<%= e.id %>/delete" class="btn btn-danger">Delete</a>
-        <a href="/<%= e.id %>/edit" class="btn btn-warning">Edit</a>
+<div class="container mt-5">
+  <nav aria-label="...">
+    <ul class="pagination">
+      <li class="page-item ">
+        
+        <a class="page-link" href="?page=<%= page - 1 %>" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="?page=<%= page = 1 %>">1</a></li>
+      <li class="page-item ">
+        <a class="page-link" href="?page=<%= page = 2 %>">2 <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="page-item"><a class="page-link" href="?page=<%= page = 3 %>">3</a></li>
+      <li class="page-item"><a class="page-link" href="?page=<%= page = 4 %>">4</a></li>
+      <li class="page-item"><a class="page-link" href="?page=<%= page = 5 %>">5</a></li>
+      <li class="page-item">
+        <a class="page-link" href="?page=<%=  page += 1 %>" >Next</a>
+      </li>
+    </ul>
+  </nav>
+
+    <div class="row">
+    <% books.forEach((e) => { %>
+      <div class="col-sm-6 col-md-4 col-lg-3 mr-2">
+        <div class="card mr-3" style="width: 18rem;">
+          <img class="card-img-top img-fluid" src="<%= e.image%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title my-card-title"><%= e.title %> </h5>
+            <p class="card-text"><%= e.description %> </p>
+            <a href="/<%= e.id %>/view" class="btn-sm btn-primary">View</a>
+            <a href="/<%= e.id %>/delete" class="btn-sm btn-danger">Delete</a>
+            <a href="/<%= e.id %>/edit" class="btn-sm btn-warning">Edit</a>
+          </div>
+        </div>
       </div>
+      <% }) %>
     </div>
-<% }) %>
 </div>
 
 
+<%- include("partials/footer.ejs")-%>
