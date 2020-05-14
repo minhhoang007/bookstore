@@ -603,25 +603,76 @@
   ],
   "users": [
     {
-      "name": "test1",
-      "email": "hoangvanminh001@gmail.com",
-      "password": "$2b$10$ocapdVskNJpPs.cpj6Xxb.6/IoC.PXxB9CedfBSlZpO8DzfXsQf3G",
-      "id": "h8QSxcMSn",
-      "wrongLogin": 0
+      "name": "hung",
+      "email": "hung@gmail.com",
+      "password": "$2b$10$5VGdsSnKd/FBjzOzoHDMXex6AN14hcjSYUqjdDAp8Jw8gbSsodf.O",
+      "id": "g8tbcB-C5",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c5664dada7819d91647c490275cf2b36"
     },
     {
-      "name": "minh",
-      "email": "minhhoang1.devvn@gmail.com",
-      "password": "$2b$10$YqbFL3dv2z9YtZmZCggAsO5XvGJNZUOUrzRqq1DjzgSIfqgG4k6f.",
-      "id": "CAJlOuxCR",
-      "wrongLogin": 0
+      "name": "dai",
+      "email": "dai@gmail.com",
+      "password": "$2b$10$9cwECyewYZxL0s1rn91XG.82DVbHT6FY79J5.XLVn/uzgaDSkkY9K",
+      "id": "Q8ldi9EmF",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c5664dada7819d91647c490275cf2b36"
     },
     {
-      "name": "nam",
-      "email": "hoangvanminh007@gmail.com",
-      "password": "$2b$10$dtSXBERI98FlH/rUhHAGz.p2uqvYbc9c4rxbY/dj.ZyfV/hdqyAY.",
-      "id": "7t6ce2FKE",
-      "wrongLogin": 0
+      "name": "nguyen",
+      "email": "nguyen@gmail.com",
+      "password": "$2b$10$YfIKnmZKHpzJmK.CYKffPOzVCD4WCTdzh4HV1l5yivQNbByFaXJ/C",
+      "id": "QUej55Zia",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c5664dada7819d91647c490275cf2b36"
+    },
+    {
+      "name": "thien",
+      "email": "thien@gmail.com",
+      "password": "$2b$10$m.nJdrkONIehMGReqc0Ds.9dGIXRoLQqOI3LQP.pcNKtbivESbEfS",
+      "id": "VF2IbPEht",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c5664dada7819d91647c490275cf2b36"
+    },
+    {
+      "name": "luan",
+      "email": "luan@gmail.com",
+      "password": "$2b$10$J.cdyXMWWWTjXEFJOeTRqeItSOXBpRD4mBzsNQdnHYozcX04TX78u",
+      "id": "6MyRXjSLQ",
+      "wrongLogin": 0,
+      "avatar": "uploads\\4b90b147ba2ab7236b87914929227fa3"
+    },
+    {
+      "name": "sinh",
+      "email": "sinh@gmail.com",
+      "password": "$2b$10$Yo6ebghEESANLzTYk.lA1uW0tqduHFqc1mgw4JypyiJTpnswCxMse",
+      "id": "XuXhvCIYO",
+      "wrongLogin": 0,
+      "avatar": "uploads\\995e17e2f1e67cddd35e8885e2a4190e"
+    },
+    {
+      "name": "hai",
+      "email": "hai@gmail.com",
+      "password": "$2b$10$nAXCa/EtYivqh/TRBCYgXOwSSyon5mpo53T1LU6HSNeLKYkZxWNLW",
+      "id": "QGFCKZJ_u",
+      "wrongLogin": 0,
+      "avatar": "uploads\\58ae02a400c6432009a6d2999af048ea"
+    },
+    {
+      "name": "tuyen",
+      "email": "tuyen@gmail.com",
+      "password": "$2b$10$4bgif/V1ee3lpmXbXvDBiekARZ7uSPM7/RU.ZQmd6jo.hfnaJmsM2",
+      "id": "SPFhmKmrf",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c5664dada7819d91647c490275cf2b36"
+    },
+    {
+      "name": "ly",
+      "email": "ly@gmail.com",
+      "password": "$2b$10$jLEYfpRWYlvE9z3QTBu9IucMZrujXsr3rLw/Vfh/14WWrzhQ6FM7q",
+      "id": "96reBCAB-",
+      "wrongLogin": 0,
+      "avatar": "uploads\\c62810c96aee6c9a73a47c78af4b2043"
     }
   ],
   "transactions": [

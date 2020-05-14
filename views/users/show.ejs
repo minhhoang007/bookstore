@@ -8,7 +8,7 @@
         <table class="table">
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">images</th>
                 <th scope="col">Users Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">Edit</th>
@@ -18,7 +18,9 @@
             <% users.forEach((e) => { %>
             <tbody>
               <tr>
-                <th scope="row"><%= e.id %></th>
+                <th scope="row">
+                  <img src="<%= e.avatar %>" alt="pc" style="width: 32px">
+                </th>
                 <td><%= e.name %></td>
                 <td><%= e.address %></td>
                 <td><a href="/users/<%= e.id %>/edit">edit</a></td>

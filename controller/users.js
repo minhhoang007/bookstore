@@ -6,6 +6,7 @@ const {sendWelcomeEmail} = require("../emails/account")
 const saltRounds  = 10
 
 module.exports.index = ((req, res) => {
+
     res.render("./users/show.ejs", { users: db.get("users").value()})
 })
 
@@ -22,12 +23,14 @@ module.exports.postCreate = ((req, res) => {
     
     bcrypt.hash(req.body.password, saltRounds, function(err, hash) {
         sendWelcomeEmail(req.body.email, req.body.name)
+        
         db.get("users").push({ 
             name: req.body.name, 
             email: req.body.email,
             password: hash,
             id:  req.body.id = shortid.generate(),
-            wrongLogin: 0
+            wrongLogin: 0,
+            avatar:  !req.file ? "uploads\\c5664dada7819d91647c490275cf2b36" : req.file.path.split("\\").slice(1).join("\\")
         }).write()
     res.redirect('/users')
     });
