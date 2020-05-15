@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,17 +17,18 @@
           <div>
             <a class="link-item" href="/create">New</a>
             <a class="link-item" href="/users">Show Users</a> 
-            <a class="link-item" href="/transaction">transaction</a>            
+            <a class="link-item" href="/transaction">transaction</a>
+            <% if (typeof user == 'object' && user) { %>
+              <p>Sign in as: <strong style="text-transform: capitalize"><%= user.name %></strong></p>
+            <% } %>
+
 
             <a href="#" class="btn-sm btn-primary">
               Carts <span class="badge badge-light"><%= quantity %></span>
               
             </a>
-           <% let user %>
-            <% if ( user ) { %>
-              <p>Sign in as: <strong style="text-transform: capitalize"><%= user.name %></strong></p>
-            <% } %>
-
+           
+          
           </div>
         </div>
       </div>

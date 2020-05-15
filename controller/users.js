@@ -6,8 +6,8 @@ const {sendWelcomeEmail} = require("../emails/account")
 const saltRounds  = 10
 
 module.exports.index = ((req, res) => {
-
-    res.render("./users/show.ejs", { users: db.get("users").value()})
+    const user  = []
+    res.render("./users/show.ejs", { users: db.get("users").value(), user })
 })
 
 module.exports.getCreate = ((req, res) => {

@@ -14,6 +14,6 @@ module.exports.requireAuth = function(req, res, next) {
         res.redirect("/login")
         return
     }
-    res.locals.user = users
+    res.locals.user = user
     next()
 }
