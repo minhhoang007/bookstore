@@ -41,3 +41,7 @@
 .subtitle {
     text-transform: capitalize;
 }
+
+.card{
+    height: auto;
+}

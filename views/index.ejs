@@ -23,11 +23,11 @@
 
     <div class="row">
     <% books.forEach((e) => { %>
-      <div class="col-sm-6 col-md-4 col-lg-3 mr-2">
-        <div class="card mr-3" style="width: 18rem;">
-          <img class="card-img-top img-fluid" src="<%= e.image%>" alt="Card image cap">
+      <div class=" col-lg-3">
+        <div class="card mr-3" ">
+          <img class="card-img-top " src="<%= e.image%>" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title my-card-title"><%= e.title %> </h5>
+            <h5 class="card-title "><%= e.title %> <a class="btn-sm btn-primary" href="/cart/add/<%= e.id %>">Add to card</a></h5>
             <p class="card-text"><%= e.description %> </p>
             <a href="/<%= e.id %>/view" class="btn-sm btn-primary">View</a>
             <a href="/<%= e.id %>/delete" class="btn-sm btn-danger">Delete</a>

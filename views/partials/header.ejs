@@ -16,9 +16,14 @@
           <div>
             <a class="link-item" href="/create">New</a>
             <a class="link-item" href="/users">Show Users</a> 
-            <a class="link-item" href="/transaction">transaction</a> 
-            <% let user %>
-            <% if (user) { %>
+            <a class="link-item" href="/transaction">transaction</a>            
+
+            <a href="#" class="btn-sm btn-primary">
+              Carts <span class="badge badge-light"><%= quantity %></span>
+              
+            </a>
+           <% let user %>
+            <% if ( user ) { %>
               <p>Sign in as: <strong style="text-transform: capitalize"><%= user.name %></strong></p>
             <% } %>
 

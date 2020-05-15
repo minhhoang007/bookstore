@@ -4,7 +4,7 @@ const controller = require("../controller/books.js")
 const validate = require("../validate/book")
 const middleWare = require("../middleware/auth")
 
-router.get('/', middleWare.requireAuth, controller.index)
+router.get('/',  controller.index)
 
 router.get('/create', middleWare.requireAuth ,controller.getCreate)
 

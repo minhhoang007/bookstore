@@ -5,13 +5,12 @@ const errors = []
 
 module.exports.index = ((req, res) => {
     const page = parseInt(req.query.page) || 1
-
     const perPage = 8
-
     const start = (page - 1) * perPage
     const end = page * perPage
 
-    res.render("index", { books: db.get("books").slice(start, end).value(),
+    res.render("index", 
+    { books: db.get("books").slice(start, end).value(),
      user: req.user, page })
 })
 

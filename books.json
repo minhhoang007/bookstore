@@ -700,5 +700,24 @@
       "isComplete": "true",
       "id": "9sSY_brJ3"
     }
+  ],
+  "sessions": [
+    {
+      "id": "C9NuuFAzz",
+      "cart": {
+        "148cdcd3-8939-4bbe-a4fc-d2221106e928": 3,
+        "013ddc82-35cf-4309-8bc9-b3564ab1b7f1": 2
+      }
+    },
+    {
+      "id": "lMh9T8_rq"
+    },
+    {
+      "id": "EGYeXi6mwE",
+      "cart": {
+        "148cdcd3-8939-4bbe-a4fc-d2221106e928": 3,
+        "a6f1b7e1-eb87-4062-9ce5-d23847f3b5ae": 1
+      }
+    }
   ]
 }
