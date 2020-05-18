@@ -2,25 +2,6 @@
 
 
 <div class="container mt-5">
-  <nav aria-label="...">
-    <ul class="pagination">
-      <li class="page-item ">
-        
-        <a class="page-link" href="?page=<%= page - 1 %>" tabindex="-1">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="?page=<%= page = 1 %>">1</a></li>
-      <li class="page-item ">
-        <a class="page-link" href="?page=<%= page = 2 %>">2 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="page-item"><a class="page-link" href="?page=<%= page = 3 %>">3</a></li>
-      <li class="page-item"><a class="page-link" href="?page=<%= page = 4 %>">4</a></li>
-      <li class="page-item"><a class="page-link" href="?page=<%= page = 5 %>">5</a></li>
-      <li class="page-item">
-        <a class="page-link" href="?page=<%=  page += 1 %>" >Next</a>
-      </li>
-    </ul>
-  </nav>
-
     <div class="row">
     <% books.forEach((e) => { %>
       <div class=" col-lg-3">
@@ -30,8 +11,10 @@
             <h5 class="card-title "><%= e.title %> <a class="btn-sm btn-primary" href="/cart/add/<%= e.id %>">Add to card</a></h5>
             <p class="card-text"><%= e.description %> </p>
             <a href="/<%= e.id %>/view" class="btn-sm btn-primary">View</a>
-            <a href="/<%= e.id %>/delete" class="btn-sm btn-danger">Delete</a>
             <a href="/<%= e.id %>/edit" class="btn-sm btn-warning">Edit</a>
+            <form action="/<%= e.id %>/delete" method="POST">
+              <button class="btn-sm btn-danger mt-2">Delete</button>
+            </form>
           </div>
         </div>
       </div>

@@ -1,60 +1,81 @@
-const shortid = require('shortid')
-const db = require("../db")
+
+const Book = require("../models/books")
 
 const errors = []
 
-module.exports.index = ((req, res) => {
-    const page = parseInt(req.query.page) || 1
-    const perPage = 8
-    const start = (page - 1) * perPage
-    const end = page * perPage
-
-    res.render("index", 
-    { books: db.get("books").slice(start, end).value(),
-     user: req.user, page })
-})
+module.exports.index =  async (req, res) => {
+    try {
+        const books = await Book.find({})
+        res.render("index", { books})
+    } catch (e) {
+        console.log(e);
+        res.status(500).send()
+    }
+}
 
 module.exports.getCreate = ((req, res) => {
-    let cookie = req.cookies
-    console.log(cookie);
+    
     res.render("create", { values: req.body, errors })
 })
 
-module.exports.postCreate = ((req, res) => {
-    req.body.id = shortid.generate()
+module.exports.postCreate =  async (req, res) => {
+    const book = new Book(req.body)
 
-    db.get("books").push(req.body).write()
-    res.redirect('/')
-  })
+    try {
+        await book.save()
+        res.status(201).redirect("/")
+    } catch (e) {
+        console.log(e);
+        res.status(400).render("create")
+    }
+}
 
-module.exports.view = ((req, res) => {
-    const id = req.params.id
-    console.log(id)
-  
-    const books = db.get("books").find({ id }).value()
-    console.log(books );
+module.exports.view = async (req, res) => {
+    const _id = req.params.id
+
+    const books = await Book.findById({ _id })
+    console.log(books);
+
     res.render("view", {
         books: books
     })
-})
+}
 
 
-module.exports.delete = ((req, res) => {
-    const id = req.params.id
+module.exports.delete = async (req, res) => {
+    try {
+        const book = await Book.findByIdAndDelete(req.params.id)
 
-    db.get('books').remove({ id }).write()
-    res.redirect('/')
-    
-})
+        if (!book) {
+            return res.status(404).redirect("back")
+        }
 
-module.exports.getEdit = ((req, res) => {
-    const id = req.params.id
-    const books = db.get("books").find({ id }).value()
-    res.render('edit', { books })
-})
+        res.redirect('/')
+    } catch (e) {
+        console.log(e);
+        res.status(500).send()
+    }
+}
 
-module.exports.postEdit = ((req, res) => {
-    const id = req.params.id
-    db.get('books').find({ id }).assign( req.body ).write()
-    res.redirect("/")
-})
+module.exports.getEdit = async (req, res) => {
+    const _id = req.params.id
+    const books = await Book.find({ _id })
+    const errors = []
+    res.render('edit', { books, errors })
+}
+
+module.exports.postEdit =  async (req, res) => {
+    try {
+        const book = await Book.findByIdAndUpdate(req.params.id, req.body,
+             { new: true, runValidators: true })
+
+        if (!book) {
+            return res.status(404).redirect("back")
+        }
+
+        res.redirect("/")
+    } catch (e) {
+        console.log(e);
+        res.status(400).send(e)
+    }
+}
